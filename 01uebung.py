@@ -2,7 +2,7 @@
 Uebungsblatt 1
 Autor: David Glaser
 Datum: ---
-Beschreibung: In dieser Python File sind die Antworten für die Aufgaben 1, 2 und 3
+Beschreibung: In dieser Python File sind die Antworten für die Aufgaben 1, 2 und 3 Teil a.
 """
 
 # Aufgabe 1
@@ -57,7 +57,7 @@ for i in range(3):
     userInput = 0
     mySum = 0
     counter = 0
-
+## e.
 while True:
     userInput = input("Enter a number (or 0 to exit): ")
     try:
@@ -87,18 +87,12 @@ age = input("How old are you? ")
 try:
     age = int(age)
 except ValueError:
-    if age == "":
-        print("You have to enter something.")
-    elif age.isspace():
-        print("Whitespace characters like spaces or tabs are not a valid input.")
-    else:
         print("The entry has to be an integer.")
 else:
     mySum = 10 if age < 12 else 12 if age <= 18 else 14 if age < 65 else 12
     print(f"Your ticket costs {mySum}.")
 
 ## b.
-
 number = input("Enter a number: ")
 try:
     number = int(number)
