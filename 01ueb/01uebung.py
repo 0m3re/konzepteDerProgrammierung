@@ -1,6 +1,6 @@
 """
 Uebungsblatt 1
-Autors: Julian, Marc Lambertz und David Glaser
+Autors: Julian Mueller, Marc Lambertz und David Glaser
 Datum: ---
 Beschreibung: In dieser Python File sind die Antworten für die Aufgaben 1, 2 und 3 Teil a.
 """
