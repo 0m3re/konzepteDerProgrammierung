@@ -140,9 +140,10 @@ In Python gibt es keine do-while Schleife, man kann aber eine do-while Schleife 
 print("\nAufgabe 2c:")
 print("Example von einer do-while Schleife in Python.")
 x = 0
-while x < 10:
+while True:
     print("x:", x)
-    x += 1
+    if(x > 10):
+        break
 ## d.
 print("\nAufgabe 2d:")
 print("Das Programm nimmt 3 ganze Zahlen an und gibt aus wie viele verschiedene Zahlen eingeben wurden.")
