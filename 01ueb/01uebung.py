@@ -172,7 +172,7 @@ for i in range(length):
         if myList[i] != myList[j]:
             count += 1
 
-print("Es gibt", count, "unterschiedliche Zahlen, naemlich", myList)
+print("Es gibt", count, "unterschiedliche Zahlen.)
 
 ## e.
 print("\nAufgabe 2e:")
