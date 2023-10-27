@@ -9,9 +9,15 @@ Beschreibung: In dieser Python File sind die Antworten für die Aufgaben 1, 2 un
 ## a.
 print("Aufgabe 1a:")
 print("Calculate the area of a triangle.")
-a = int(input("Enter the length of the side of the triangle: "))
-ha = int(input("Enter the heigth of the triangle: "))
-
+userInput = input("Enter the length of the side of the triangle: ")
+userInput2 = input("Enter the heigth of the triangle: ")
+try:
+    a = int(userInput)
+    ha = int(userInput2)
+except ValueError:
+    print("Please enter a valid number!")
+    exit()
+    
 flaecheDreieck = (a * ha)/2
 
 print(f"The area of the triangle is {flaecheDreieck}.")
@@ -174,7 +180,11 @@ print("Das Programm gibt eine Pyramide aus, die so viele Zeilen hat wie der User
 blank = " "
 
 userInput = input("How many lines? ")
-n = int(userInput)
+try:
+    n = int(userInput)
+except ValueError:
+    print("Please enter a valid number!")
+    exit()
 
 for i in range(1, n+1):
     sequence = blank * (n - i)
