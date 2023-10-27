@@ -143,6 +143,24 @@ x = 0
 while x < 10:
     print("x:", x)
     x += 1
+
+
+### ANMERKUNG Julian -> Do-while vs while
+"""
+Bei der do-while Schleife steht der Ausführungblock vorgesetzt zur bedingung zur Terminierung. So wird, im Gegensatz
+zur klassischen While-schleife, erst ausgeführt und dann die Bedingung überprüft.
+"""
+x = 0
+while(True):
+    print("Grüße aus der 'do'-Whileschleife")
+    if(x <= 0):
+        break
+    else:
+        x -=1
+
+while(x<=0):
+    print("Grüße aus der klassischen while-Schleife")
+
 ## d.
 print("\nAufgabe 2d:")
 print("Das Programm nimmt 3 ganze Zahlen an und gibt aus wie viele verschiedene Zahlen eingeben wurden.")
