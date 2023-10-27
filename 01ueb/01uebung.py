@@ -88,20 +88,27 @@ while True:
         num = int(userInput)
         if num == 0:
             break
-    except ValueError:
+    except ValueError as err:
         if userInput == "":
             print("You have to enter something.")
         elif userInput.isspace():
             print("Whitespace characters like spaces or tabs are not a valid input.")
         else:
             print("The entry has to be an integer.")
+        print("System err-msg:", err)
     else:
         counter += 1
         mySum += num
+#Falls es zu eingaben negativer Zahlen kommen sollte bzw 0-division
 try:
-    print(f"The sum is {mySum/counter}")
+    if(counter > 0 and mySum == 0):
+        print("The average is: 0")
+    else:
+        print("The average is:", mySum/counter)
 except ZeroDivisionError:
     print("You didn't enter any numbers.")
+except Exception as err:
+    print("Something went wrong.. didnt see that coming",err)
 
 # Aufgabe 2
 ## a.
