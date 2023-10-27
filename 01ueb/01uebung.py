@@ -1,6 +1,6 @@
 """
 Uebungsblatt 1
-Autor: David Glaser
+Autors: Julian, Marc Lambertz und David Glaser
 Datum: ---
 Beschreibung: In dieser Python File sind die Antworten für die Aufgaben 1, 2 und 3 Teil a.
 """
@@ -8,7 +8,7 @@ Beschreibung: In dieser Python File sind die Antworten für die Aufgaben 1, 2 un
 # Aufgabe 1
 ## a.
 print("Aufgabe 1a:")
-print("Calculate the area of a triangle:")
+print("Calculate the area of a triangle.")
 a = int(input("Enter the length of the side of the triangle: "))
 ha = int(input("Enter the heigth of the triangle: "))
 
@@ -22,7 +22,7 @@ Man can switch case ausdruecke in Python mit if-elif-else statements ersetzen.
 In dem Beispiel wird es mit einem Basic calculator gezeigt.
 """
 print("\nAufgabe 1b:")
-print("Example of a Switch Case in Python with a Basic Calculator:")
+print("Example of a Switch Case in Python with a Basic Calculator.")
 try:
     x = int(input("Enter a number for x: "))
     y = int(input("Enter a number for y: "))
@@ -44,7 +44,7 @@ else:
 
 ## c.
 print("\nAufgabe 1c:")
-print("Example of a for i in range with a while loop:")
+print("Example of a for i in range with a while loop.")
 i= 1
 n = 1000
 while(i < n):
@@ -111,7 +111,7 @@ else:
 
 ## b.
 print("\nAufgabe 2b:")
-print("Example von if-elif-else statements mit if-then statements ersetz:")
+print("Example von if-elif-else statements mit if-then statements ersetz.")
 number = input("Enter a number: ")
 try:
     number = int(number)
@@ -132,12 +132,11 @@ Eine do-while Schleife ist eine Schleife, die ausgeführt wird, solange eine Bed
 In Python gibt es keine do-while Schleife, man kann aber eine do-while Schleife mit einer while Schleife ersetzen.
 """
 print("\nAufgabe 2c:")
-print("Example von einer do-while Schleife in Python:")
+print("Example von einer do-while Schleife in Python.")
 x = 0
 while x < 10:
     print("x:", x)
     x += 1
-
 ## d.
 print("\nAufgabe 2d:")
 print("Das Programm nimmt 3 ganze Zahlen an und gibt aus wie viele verschiedene Zahlen eingeben wurden.")
