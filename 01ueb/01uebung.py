@@ -50,12 +50,13 @@ else:
 
 ## c.
 print("\nAufgabe 1c:")
-print("Example of a for i in range with a while loop.")
-i= 1
-n = 10
-while(i < n):
-    print(i)
-    i += 1
+print("Beispiel eines 'for i in range(a, b, b)' in form einer While-Schleife.")
+start = 1
+stop = 10
+step = 1
+while(start < stop):
+    print(start)
+    start += step
 
 ## d.
 print("\nAufgabe 1d:")
