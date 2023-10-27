@@ -70,6 +70,7 @@ else:
     print(False)
 
 ## e.
+# Die Zahl 0 wird nicht zum durschnit dazu gezählt, da 0 das Programm beendet.
 print("\nAufgabe 1e:")
 print("Das Programm nimmt so lange Zahlen ein bis eine 0 eingegeben wird.")
 counter = 0
@@ -126,6 +127,10 @@ except ValueError:
     print("Please enter a valid integer!")
 
 ## c. do-while in python
+"""
+Eine do-while Schleife ist eine Schleife, die ausgeführt wird, solange eine Bedingung erfüllt ist.
+In Python gibt es keine do-while Schleife, man kann aber eine do-while Schleife mit einer while Schleife ersetzen.
+"""
 print("\nAufgabe 2c:")
 print("Example von einer do-while Schleife in Python:")
 x = 0
@@ -135,18 +140,28 @@ while x < 10:
 
 ## d.
 print("\nAufgabe 2d:")
-print("Das Programm nimmt 3 ganze Zahlen aus und gibt aus wie viele verschiedene Zahlen eingeben wurden.")
+print("Das Programm nimmt 3 ganze Zahlen an und gibt aus wie viele verschiedene Zahlen eingeben wurden.")
 # Könnte man mit einem set lösen, da es keine doppelten Zahl animmt, aber es würde den Stoff sprengen.
 myList = [] 
-length = 3
-
-for i in range(length):
-    userInput = input("Enter a number: ")
-    number = int(userInput)
-    myList.append(number)
+#userInput = input("Wie viele Zahlen möchtest du eingeben? ")
+#try:
+#    amount = int(userInput)
+#except ValueError:
+ #   print("The entry has to be an integer.")
+ #   exit()
+amount = 3
+for i in range(amount):
+    userInput = input(f"Enter a number: ")
+    try:
+        num = int(userInput)
+    except ValueError:
+        print("The entry has to be an integer.")
+        exit()
+    myList.append(num)
 
 # zaehle die unterschiedlichen Zahlen, also erste anderes als zweite und dritte und zweite anderes als dritte
 count = 0
+length = len(myList)
 for i in range(length):
     for j in range(i+1, length):
         if myList[i] != myList[j]:
