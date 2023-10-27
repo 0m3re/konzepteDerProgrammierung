@@ -134,19 +134,6 @@ except ValueError:
 
 ## c. do-while in python
 """
-Eine do-while Schleife ist eine Schleife, die ausgeführt wird, solange eine Bedingung erfüllt ist.
-In Python gibt es keine do-while Schleife, man kann aber eine do-while Schleife mit einer while Schleife ersetzen.
-"""
-print("\nAufgabe 2c:")
-print("Example von einer do-while Schleife in Python.")
-x = 0
-while x < 10:
-    print("x:", x)
-    x += 1
-
-
-### ANMERKUNG Julian -> Do-while vs while
-"""
 Bei der do-while Schleife steht der Ausführungblock vorgesetzt zur bedingung zur Terminierung. So wird, im Gegensatz
 zur klassischen While-schleife, erst ausgeführt und dann die Bedingung überprüft.
 """
