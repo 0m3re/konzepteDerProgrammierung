@@ -52,7 +52,7 @@ else:
 print("\nAufgabe 1c:")
 print("Example of a for i in range with a while loop.")
 i= 1
-n = 1000
+n = 10
 while(i < n):
     print(i)
     i += 1
