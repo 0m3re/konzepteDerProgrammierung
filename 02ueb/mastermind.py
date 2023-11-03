@@ -1,3 +1,10 @@
+"""
+Uebungsblatt 1
+Autors: Julian Mueller, Marc Lambertz und David Glaser
+Datum: ---
+Beschreibung: In dieser Python File sind die Antworten für die Aufgaben 1, 2 und 3 Teil a.
+"""
+
 import random
 ## Die Einzlenen Funktionen sind jeweils das Ergebnis der Teilaufgaben von 2a-c
 
