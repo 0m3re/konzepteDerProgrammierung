@@ -12,26 +12,10 @@ random.seed()
 ## Aufgabe 2a - sechstellige Basensequenz als string.
 ## () -> str // Erzeugt sechstellige Basensequenz als str und gibt diese zurück.
 def create_base_list():
-    dna_str = ""
-    i = 6
-    while(i>0):
-        x = random.randint(1,4)
-        if x==1:
-            dna_str += "A"
-        if x==2:
-            dna_str += "C"
-        if x==3:
-            dna_str += "G"
-        if x==4:
-            dna_str += "T"
-        i-=1
-
-    """
     dna_list = ["A","C","G","T"]
     dna_str = ""
     for i in range(6):
         dna_str += random.choice(dna_list) 
-    """
     return dna_str
 
 
