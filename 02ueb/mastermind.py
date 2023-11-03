@@ -1,8 +1,8 @@
 """
-Uebungsblatt 1
+Uebungsblatt 2
 Autors: Julian Mueller, Marc Lambertz und David Glaser
-Datum: ---
-Beschreibung: In dieser Python File sind die Antworten für die Aufgaben 1, 2 und 3 Teil a.
+Datum: 03.Nov 23
+Beschreibung: In dieser Python File sind die Antworten für die Aufgaben 2a-d
 """
 
 import random
