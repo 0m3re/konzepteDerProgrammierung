@@ -1,5 +1,8 @@
 import random
+## Die Einzlenen Funktionen sind jeweils das Ergebnis der Teilaufgaben von 2a-c
 
+## Aufgabe 2a - sechstellige Basensequenz als string.
+## () -> str // Erzeugt sechstellige Basensequenz als str und gibt diese zurück.
 def create_base_list():
     dna_str = ""
     i = 6
@@ -16,6 +19,9 @@ def create_base_list():
         i-=1
     return dna_str
 
+
+## Aufgabe 2b - Positionaler Vergleich der Einzelnen Basen. Returned integer der Anzahl der gleichen Stellen
+## (str, str) -> int // Gibt die Anzahl der gleichen Positionen in den jeweiligen str zurück.
 def compare_position(base_str_a, base_str_b):
     same_position = 0
     first_list = list(base_str_a)
@@ -28,6 +34,9 @@ def compare_position(base_str_a, base_str_b):
         i +=1
     return same_position
 
+## Aufgabe 2c - Vergleich der Häufigkeit in den einzelen Basen
+## base_prec(str) -> {} // String returned Häufigkeitsverteilung einzelnen chars als Dict.
+## compare_prev(str, str) -> int // Vergleich der Häufigkeitsverteilung (base_prec()) zweier Strings.
 def base_prev(base_str):
     histo = {}
     for char in base_str:
@@ -46,7 +55,10 @@ def compare_prev(base_str_a, base_str_b):
         if second_prev.get(key) == prevalence:
             prev+=1
     return prev
-  
+
+
+## Aufgabe 2d - Zusammenführung der vorheringen Aufgaben.
+## 
 print('Willkommen beim Base-Sequenzen-Raten - total spannend.')
 base_sequenz = create_base_list()
 rounds = []
