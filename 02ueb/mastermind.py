@@ -72,7 +72,7 @@ rounds = []
 prevalence = 0
 position = 0
 
-print("debugg", base_sequenz)
+
 while(True):
     if(len(rounds)<1):
         print("Runde 1! Bitte mache deine erste Eingabe!")
