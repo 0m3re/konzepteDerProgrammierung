@@ -39,13 +39,15 @@ def create_base_list():
 ## (str, str) -> int // Gibt die Anzahl der gleichen Positionen in den jeweiligen str zurück.
 def compare_position(base_str_a, base_str_b):
     same_position = 0
-    first_list = list(base_str_a)
-    second_list = list(base_str_b)
-    i=0
-    while(i<6):
-        if(first_list[i] == second_list[i]):
-          same_position +=1
-        i +=1
+    base_str_a = base_str_a.upper()
+    base_str_b = base_str_b.upper()
+    
+    if(base_str_a == base_str_b):
+        same_position = 6
+    else:
+        for i in range(6):
+            if(base_str_a[i] == base_str_b[i]):
+                same_position +=1
     return same_position
 
 ## Aufgabe 2c - Vergleich der Häufigkeit in den einzelen Basen
