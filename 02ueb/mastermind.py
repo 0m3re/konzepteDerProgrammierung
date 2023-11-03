@@ -33,7 +33,6 @@ def compare_position(base_str_a, base_str_b):
     same_position = 0
     first_list = list(base_str_a)
     second_list = list(base_str_b)
-    print("DEBUGG - LIST INPUT:", first_list,"and",second_list)
     i=0
     while(i<6):
         if(first_list[i] == second_list[i]):
