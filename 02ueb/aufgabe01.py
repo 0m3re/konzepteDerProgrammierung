@@ -1,7 +1,7 @@
 """
 Uebungsblatt 1
 Autors: Julian Mueller, Marc Lambertz und David Glaser
-Datum: ---
+Datum: 03.Nov 23
 Beschreibung: In dieser Python File sind die Antworten für die Aufgaben 1.
 """
 
@@ -13,6 +13,23 @@ Mit Zahlen können folgende Probleme auftreten:
     - Unterflow: wenn die Zahl zu klein ist, um sie zu speichern. Passiert in Python nur mit floats, denn ints haben keine Untergrenze (außer der Speicherplatz)
     - Rundungs Fehler: wenn man 0.1 + 0.2 rechnet ist das nicht 0.3
 """
+### Aufgabe 1a
+# Einteilung der einzelnen Lernziele nach den Lernzielen im whiteboard
+'''
+Aufgabe 1
+b kdp5
+c kdp2 kdp7
+d kdp2 kdp7
+
+Aufgabe 2
+a kdp2 kdp7
+b kdp2 kdp7
+c kdp2 kdp7
+d kdp2 kdp7
+
+'''
+
+#Aufgabe 1b
 def aufgabe1b():
     print("\nDie Auswahlmöglichkeiten: \n"
         "1: Division mit 0\n"
@@ -104,3 +121,33 @@ while(True):
         break
     else:
         print("Ihre Wahl existiert nicht. Bitte geben Sie eine Zahl zwischen 1 und 4 ein.")
+
+
+#Aufgabe 1c
+histo = {}
+input_str = input("Eingabe bitte: ")
+
+for char in input_str:
+    x = histo.get(char)
+    if x == None:
+        histo.update({char: 1})
+    else:
+        histo.update({char: x+1})
+print(histo)
+
+
+#Aufgabe 1d
+dna_seq = input("DNA Sequenz eigeben:")
+dna_comp = ""
+for char in dna_seq:
+    if(char == "A" or char == "a"):
+        dna_comp = "T"+dna_comp
+    elif(char =="T" or char == "t"):
+        dna_comp = "A"+dna_comp
+    elif(char == "C" or char == "c"):
+        dna_comp = "G"+dna_comp
+    elif(char == "G" or char == "g"):
+        dna_comp = "C"+dna_comp
+    else:
+      print("The character",char,"is not a representation of a dna-base and will be ignored")
+print(dna_comp)
