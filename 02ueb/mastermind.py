@@ -6,7 +6,7 @@ Beschreibung: In dieser Python File sind die Antworten für die Aufgaben 2a-d
 """
 
 import random
-random.seed()
+random.seed(0)
 ## Die Einzlenen Funktionen sind jeweils das Ergebnis der Teilaufgaben von 2a-c
 
 ## Aufgabe 2a - sechstellige Basensequenz als string.
