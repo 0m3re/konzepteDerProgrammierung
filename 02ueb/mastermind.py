@@ -39,9 +39,7 @@ def create_base_list():
 ## (str, str) -> int // Gibt die Anzahl der gleichen Positionen in den jeweiligen str zurück.
 def compare_position(base_str_a, base_str_b):
     same_position = 0
-    base_str_a = base_str_a.upper()
-    base_str_b = base_str_b.upper()
-    
+
     if(base_str_a == base_str_b):
         same_position = 6
     else:
@@ -56,20 +54,21 @@ def compare_position(base_str_a, base_str_b):
 def base_prev(base_str):
     histo = {}
     for char in base_str:
-        x = histo.get(char)
-        if x == None:
-            histo.update({char: 1})
+        if char in histo:
+            histo[char] += 1
         else:
-            histo.update({char: x+1})
+            histo[char] = 1
     return histo
 
 def compare_prev(base_str_a, base_str_b):
     first_prev = base_prev(base_str_a)
     second_prev = base_prev(base_str_b)
+
     prev = 0
-    for key, prevalence in first_prev.items():
-        if second_prev.get(key) == prevalence:
-            prev+=1
+    for key in first_prev: # oder first_prev.items()
+        if key in second_prev and first_prev[key] == second_prev[key]: # oder first_prev.get(key) == second_prev.get(key)
+            prev += 1
+
     return prev
 
 
