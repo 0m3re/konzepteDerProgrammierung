@@ -6,6 +6,7 @@ Beschreibung: In dieser Python File sind die Antworten für die Aufgaben 2a-d
 """
 
 import random
+random.seed()
 ## Die Einzlenen Funktionen sind jeweils das Ergebnis der Teilaufgaben von 2a-c
 
 ## Aufgabe 2a - sechstellige Basensequenz als string.
@@ -24,6 +25,13 @@ def create_base_list():
         if x==4:
             dna_str += "T"
         i-=1
+
+    """
+    dna_list = ["A","C","G","T"]
+    dna_str = ""
+    for i in range(6):
+        dna_str += random.choice(dna_list) 
+    """
     return dna_str
 
 
