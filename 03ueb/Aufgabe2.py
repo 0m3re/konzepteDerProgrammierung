@@ -35,7 +35,7 @@ print("Test mit float:", float_test_result, "mit dem Typ:", type(float_test_resu
 ###
 
 # quersumme(int):float
-# Precondition: Number of type int or float
+# Precondition: None
 # Effect: None                                                       !!!!!!! Muss hier die ständige Kürzung der num- Variable hin? siehe S9 Kasten.
 # Result: Returns the cross sum of the given Number
 ''' Test cases:
