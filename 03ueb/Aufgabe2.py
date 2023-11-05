@@ -2,10 +2,10 @@
 ### Aufgabe 2 - d
 ###
 
-# smallest(List[Number]):Number
+# smallest(List[Number])
 # Precondition: Non empty list; Number of type int or float
-# Effect: The list will be changed
-# Result: The smallest number in a List of numbers is returned
+# Effect: Everything but the smallest number will be deleted removed from the list
+# Result: None
 ''' Test cases:
 smallest([1,2,3,6,98,0]) == 0
 smallest([9,827,1,3,5,7,1]) == 1
@@ -20,19 +20,23 @@ def smallest(num_list):
     # Vergleich der jeweils ersten beiden Elemente der List - das größere wird entfernt.
     elif num_list[0] < num_list[1]:
         del num_list[1]
-        print(num_list)
         smallest(num_list)
     else:
         del num_list[0]
-        print(num_list)
         smallest(num_list)
         
+# k_smallest(List[Number]):Number
+# Precondition: Non empty list; Number of type int or float
+# Effect: None
+# Result: The smallest number in a List of numbers is returned
+''' Test cases
 
+'''
 def k_smallest(num_list):
     # Abbruchsbedingung für Liste < 2.
     if len(num_list)<2:
         return num_list[0]
-    # Vergleich der jeweils ersten beiden Elemente der List - das größere wird entfernt.
+    # Vergleich der jeweils ersten beiden Elemente der List - Rekurssion mit geslicter liste um das Listenobjekt nicht zu verändern
     elif num_list[0] < num_list[1]:
         return smallest(num_list[:1]+num_list[2:])
     else:
@@ -54,15 +58,16 @@ print("float test:", float_list)
 
 # quersumme(int):float
 # Precondition: None
-# Effect: None                                                       !!!!!!! Muss hier die ständige Kürzung der num- Variable hin? siehe S9 Kasten.
+# Effect: None
 # Result: Returns the cross sum of the given Number
 ''' Test cases:
 
 '''
 def quersumme(num):
-    if num < 10:
-        return num
+    x = num
+    if x < 10:
+        return x
     else:
-        return (num % 10) + quersumme((num - (num % 10))/10)
+        return (x% 10) + quersumme((x - (x % 10))/10)
       
 print(quersumme(int(input("quersumme:"))))
