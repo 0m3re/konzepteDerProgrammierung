@@ -29,3 +29,22 @@ int_test_result = smallest([10,103,9,82,33,21])
 print("Test mit int:", int_test_result, "mit dem Typ:", type(int_test_result))
 float_test_result = smallest([10.2,10.3,0.9,8,33.3,21.1])
 print("Test mit float:", float_test_result, "mit dem Typ:", type(float_test_result))
+
+###
+### Aufgabe 2 - d
+###
+
+# quersumme(Number):float
+# Precondition: Number of type int or float
+# Effect: None                                                       !!!!!!! Muss hier die ständige Kürzung der num- Variable hin? siehe S9 Kasten.
+# Result: Returns the cross sum of the given Number
+''' Test cases:
+
+'''
+def quersumme(num):
+    if num < 10:
+        return num
+    else:
+        return (num % 10) + quersumme((num - (num % 10))/10)
+      
+print(quersumme(int(input("quersumme:"))))
