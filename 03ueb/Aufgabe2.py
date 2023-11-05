@@ -31,7 +31,7 @@ float_test_result = smallest([10.2,10.3,0.9,8,33.3,21.1])
 print("Test mit float:", float_test_result, "mit dem Typ:", type(float_test_result))
 
 ###
-### Aufgabe 2 - d
+### Aufgabe 2 - e
 ###
 
 # quersumme(Number):float
