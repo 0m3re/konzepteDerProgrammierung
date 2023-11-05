@@ -4,7 +4,7 @@
 
 # smallest(List[Number]):Number
 # Precondition: Non empty list; Number of type int or float
-# Effect: None
+# Effect: None                                                       !!!!!!! Muss hier die Kürzung der Liste hin?
 # Result: The smallest number in a List of numbers is returned
 ''' Test cases:
 smallest([1,2,3,6,98,0]) == 0
