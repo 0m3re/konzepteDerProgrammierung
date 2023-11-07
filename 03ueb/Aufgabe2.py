@@ -1,4 +1,57 @@
 ###
+### Aufgabe 2 - a
+###
+### Etwas clunky das Ganze. Das geht sicher kürzer.
+
+#binarysearch(List[int], int):Bool
+#Precondition: A non empty list that is sorted in ascending order
+#Effect: None
+#Result: Returns true/false if list contains the int-element or dosent.
+''' Test cases:
+binarysearch(search_list, 16) == True
+binarysearch(search_list, 1621) == False
+
+'''
+search_list = [289,244,243,130,128,64,42,32,16,8,4,2,1]
+import math
+search_list.sort()
+
+def binarysearch(s_list, num):
+    print(s_list)
+    list_length = len(s_list)
+    if(list_length<2 and s_list[0]==num):
+        return True
+    elif(list_length<2):
+        return False
+    else:
+        if(list_length%2 == 0):
+            if(s_list[int(list_length/2)-1]>num):
+                print("Debug- Gerade // s_list durchschnitt > num - calling binarysearch")
+                return binarysearch(s_list[:list_length-1],num)
+            elif(s_list[int(list_length/2)]<num):
+                #Hier könnte noch ein zusätzliche Abbruchbedingung schreiben falls nummer größer ist als das größte Element der Liste um einen Aufruf zu sparen
+                print("Debug- Gerade // s_list durchschnitt < num - calling binarysearch")
+                return binarysearch(s_list[int(list_length/2):],num)
+            #Dieser case cann nicht erreicht werden da die beiden ersten bereits beides abfangen.
+            elif(s_list[int(list_length/2)-1]==num or s_list[int(list_length/2)]==num):
+                return True
+            else:
+                return False
+        else:
+            if(s_list[math.floor(list_length/2)]>num):
+                print("Debug- Ungerage // s_list durchschnitt > num - calling binarysearch")
+                return binarysearch(s_list[:int(math.floor(list_length/2))],num)
+            elif(s_list[math.floor(list_length/2)]<num):
+                print("Debug- Ungerade // s_list durchschnitt < num - calling binarysearch")
+                return binarysearch(s_list[int(math.floor(list_length/2)):],num)
+            elif(s_list[math.floor(list_length/2)] == num):
+                return True
+            else:
+                return False
+              
+print(binarysearch(search_list, 1621))
+
+###
 ### Aufgabe 2 - d
 ###
 
