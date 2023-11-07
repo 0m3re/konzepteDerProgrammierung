@@ -16,6 +16,39 @@ search_list = [289,244,243,130,128,64,42,32,16,8,4,2,1]
 import math
 search_list.sort()
 
+def bsearch(s_list, num):
+    print("Liste:",s_list)
+    length = len(s_list)
+    #Ich bin mal mutig und nehme an, dass das typcasting hier einfach abrundet.. ansonsten halt math.floor()
+    mid = int(length/2)
+    #Wir haben 4 Fälle:
+    # 1. wenn s_list[mid] == der gesuchten nummer ist brechen wir mir true ab.
+    # 2. wenn die Liste <2 also maximal nur ein Element beinhaltet und nicht der erste Fall eingetreten ist ist das Element nicht in der Liste, daher Rückgabe False
+    # 3. Wenn also mehr als ein Element in der Liste ist vergleichen wir das Element mit dem Index len(list)/2 = mid mit unserer gesuchten Nummer, hier wird bei größer der linke Teil der liste übergeben
+    # 4. Analog zu 3. hier nur falls das mid-element kleiner ist als das Gesuchte
+    
+    #wir haben hier noch den Fall, dass die Zahl größer oder kleiner ist als das jeweils größte/kleinste Element der Liste. Dies führt auch zum kompletten durchlauf und wäre, unter der Bedingung
+    #dass die Liste sortiert wäre vorher einfach zu prüfen um eine Berechnung über lange Listen zu verhindern. Ich würde hier wahrscheinlich einfach vorher die Sortierung überprüfen und die jeweiligen max/min. 
+    if length <2:
+        if length == 0:
+            return False
+        elif s_list[0] == num:
+            return True
+        else:
+            return False
+    elif s_list[mid] == num:
+        return True
+    elif s_list[mid]>num:
+        print("Das gesuchte Element", num, "ist kleiner als das mid-Element:", s_list[mid])
+        return bsearch(s_list[:mid],num)
+    elif s_list[mid]<num:
+        print("Das gesuchte Element", num, "ist größer als das mid-Element:", s_list[mid])
+        return bsearch(s_list[mid+1:],num)
+print("BESEARCH SHORT VERSION:")
+print(bsearch(search_list, 1000))
+print("----------------------------")
+
+
 def binarysearch(s_list, num):
     print(s_list)
     list_length = len(s_list)
