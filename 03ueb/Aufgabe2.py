@@ -84,6 +84,35 @@ def binarysearch(s_list, num):
               
 print(binarysearch(search_list, 1621))
 
+search_list = [289,244,243,130,128,64,42,32,16,8,4,2,1]
+search_list.sort()
+
+def bsearch(s_list, num):
+    s_list.sort()
+    if s_list[0]>num:
+        return False
+    elif s_list[len(s_list)-1]<num:
+        return False
+    else:
+        return bsearch_calc(s_list, num)
+    
+def bsearch_calc(s_list, num):
+    print(s_list)
+    length = len(s_list)
+    mid = int(length/2)
+    if s_list[mid] == num:
+        return True
+    elif length < 2:
+        return False
+    elif s_list[mid] > num:
+        print("Rekursion - num < s_list[mid]")
+        return bsearch_calc(s_list[:mid], num)
+    elif s_list[mid] < num:
+        print("Rekursion - num > s_list[mid]")
+        return bsearch_calc(s_list[mid+1:], num)
+      
+print(bsearch_calc(search_list, 0))
+
 ###
 ### Aufgabe 2 - d
 ###
