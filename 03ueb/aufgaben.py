@@ -9,6 +9,15 @@ random.seed(0)
 
 # Aufgabe 1
 ## a) Binaersuche
+def bsearch(s_list, num):
+    s_list.sort()
+    if s_list[0]>num:
+        return False
+    elif s_list[len(s_list)-1]<num:
+        return False
+    else:
+        return bsearch_calc(s_list, num)
+
 def binaer_suche(number_list, number):
     number_list.sort()
     right = len(number_list) - 1
@@ -23,16 +32,7 @@ def binaer_suche(number_list, number):
             left = center + 1
     else:
         return False
-
-def bsearch(s_list, num):
-    s_list.sort()
-    if s_list[0]>num:
-        return False
-    elif s_list[len(s_list)-1]<num:
-        return False
-    else:
-        return bsearch_calc(s_list, num)
-    
+ 
 def bsearch_calc(s_list, num):
     print(s_list)
     length = len(s_list)
@@ -118,6 +118,16 @@ def ggt(number1, number2):
     return number2
 
 ## c) dna2rna
+
+# dna2rna_with_return(List[str]): List[str]
+# Precondition: list is not empty, list does only contain iterations of A, C, T, G
+# Effect: None
+# Result: The rna sequenz is returned (the same as input, but T replaced by U)
+''' Test cases:
+dna2rna_with_return(["A", "T", "G", "T", "C", "A"]) == ["A", "U", "G", "U", "C", "A"]
+dna2rna_with_return(["A", "C", "T", "T", "A", "C"]) == ["A", "C", "U", "U", "A", "C"]
+dna1rna_with_return(["G", "T", "T", "A", "C", "G", "A", "T", "C"]) == ["G", "U", "U", "A", "C", "G", "A", "U", "C"]
+'''
 def dna2rna_with_return(dna_sequenz):
     rna_sequenz = []
     for i in dna_sequenz:
