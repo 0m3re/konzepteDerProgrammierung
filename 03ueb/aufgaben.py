@@ -326,7 +326,7 @@ def aufgabe1():
             print("Die generierte Liste", xs)
             print("Funktion foo: ", foo(xs, k))
             print("Imperative bar Funktion: ", bar(xs, k))
-            print("Recursive bar Funktion", recursiv_bar(xs, k))
+            print("Recursive bar Funktion", recursive_bar(xs, k))
         elif user_choice == "3":
             size_first_list = int(input("Gebe ein, wie groß die erste Liste sein soll: "))
             smallest_first = int(input("Was ist die untere Schranke der Liste: "))
