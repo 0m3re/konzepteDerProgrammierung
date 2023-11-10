@@ -171,17 +171,50 @@ def dna2rna_without_return(dna_sequenz):
         if dna_sequenz[i] == "T":
             dna_sequenz[i] = "U"
 
-## d) k_smallest
-def k_smallest(number_list, tmp = None):
-    if tmp == None:
-        tmp = number_list[0]
-        return k_smallest(number_list[1:], tmp)
-    if len(number_list) > 0:
-        if number_list[0] < tmp:
-            tmp = number_list[0]
-        return k_smallest(number_list[1:], tmp)
-    else:
-        return tmp
+## d) smallest - void
+# smallest(List[Number]):Number
+# Precondition: Non empty list; Number of type int or float
+# Effect: The num_list Object will be changed and everything but the smallest element will be deleted.
+# Result: None
+''' Test cases:
+smallest([1,2,3,6,98,0]) => num_list == [0]
+smallest([9,827,1,3,5,7,1,-1]) => num_list == [-1]
+smallest([1]) => num_list == [1]
+smallest([1.0,1.3.0.3.10.5]) => num_list == [0.3]
+'''
+
+def smallest(num_list):
+    # Abbruchsbedingung für Liste < 2.
+    if len(num_list)<2:
+          None
+      # Vergleich der jeweils ersten beiden Elemente der List - das größere wird entfernt.
+      elif num_list[0] < num_list[1]:
+          del num_list[1]
+          smallest(num_list)
+      else:
+          del num_list[0]
+          smallest(num_list)
+          
+## d 2) smallest - No Effect
+# smallest(List[Number]):Number
+# Precondition: Non empty list; Number of type int or float
+# Effect: None
+# Result: The smallest number in a List of numbers is returned
+''' Test cases:
+k_smallest([1,2,3,6,98,0]) == 0
+k_smallest([9,827,1,3,5,7,1,-1) == -1
+k_smallest([1]) == 1
+l_smallest([1.0,1.3.0.3.10.5]) == 0.3
+'''
+  def k_smallest(num_list):
+      # Abbruchsbedingung für Liste < 2.
+      if len(num_list)<2:
+          return num_list[0]
+      # Vergleich der jeweils ersten beiden Elemente der List - das größere wird entfernt.
+      elif num_list[0] < num_list[1]:
+          return k_smallest(num_list[:1]+num_list[2:])
+      else:
+          return k_smallest(num_list[1:])
 
 ## e) quersumme
 
