@@ -1,8 +1,10 @@
 """
-
+Uebungsblatt 3
+Autors: Julian Mueller, Marc Lambertz und David Glaser
+Datum: ---
+Beschreibung: In dieser Python File sind alle Aufgaben mit einem Dialog
 """
-# Man haette alles wie gefragt in zwei Dateien schreiben können, aber wir haben Funktionen die wir für die Uebung 1 geschrieben haben in der Uebung 2 benutzt.
-# Da wir noch keine Klassen gesehen habe, dachten wir uns es ist besser alles in eine Datei zu schreiben
+# Da wir noch keine Klassen gesehen habe, dachten wir uns es ist besser alles in eine Datei zu schreiben. Wir haben ja ein Dialog geschrieben.
 
 import random
 random.seed(0)
