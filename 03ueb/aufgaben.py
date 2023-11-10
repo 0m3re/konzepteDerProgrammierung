@@ -86,7 +86,7 @@ def add(list1, list2):
     for i in range(length):
         sum_list.append(list1[i] + list2[i])
         scalar_product += list1[i] * list2[i]
-    return "Komponentenweise Summe:", sum_list, "Skalar Produkt:", scalar_product
+    return sum_list, scalar_product
 
 ## d) Funktion countDigits
 def countDigits_with_conversion(number):
@@ -105,29 +105,41 @@ def countDigits(number):
 ### Anstatt den Algorithmus neu zu schreiben, ist es einfacher die Liste zu sortieren damit es passt. Ansonsten haette man den selben Algorithmus schreiben muessen der das gegenteil macht.
 
 ## b) ggt
+
+# ggt(int, int): int
+# Precondition: number1 and number2 can't be negative and one of them not zero.
+# Effect: Prints each step of the algorithm to the terminal.
+# Result: Returns the greatest common divisor of number1 and number2
+""" Test cases:
+ggt(48, 18) == 6
+ggt(0, 5) == 5
+ggt(7, 7) == 7
+"""
 def ggt(number1, number2):
     if number1 > number2:
-        number1, number2 = number2, number1
+        x, y = number2, number1
+    else: 
+        x, y = number1, number2
     counter = 1
-    while number1 != 0:
-        r = number2 % number1
-        q = (number2 - r) // number1 # Ist nicht essentiell, macht aber die Ausgabe verständlicher
-        print(f"\nSchritt {counter}: {number2} = {q} * {number1} + {r}")
-        number2, number1 = number1, r
+    while x != 0:
+        r = y % x
+        q = (y - r) // x # Ist nicht essentiell, macht aber die Ausgabe verständlicher
+        print(f"\nSchritt {counter}: {y} = {q} * {x} + {r}")
+        y, x = x, r
         counter += 1 # hier das selbe
-    return number2
+    return y
 
 ## c) dna2rna
 
-# dna2rna_with_return(List[str]): List[str]
-# Precondition: list is not empty, list does only contain iterations of A, C, T, G
-# Effect: None
-# Result: The rna sequenz is returned (the same as input, but T replaced by U)
-''' Test cases:
+# dna2rna_with_return(List[str]) : List[str]
+# Precondition: list is not empty and list contains only iterations of 'A', 'C', 'G', 'T'.
+# Effect: None 
+# Result: Returns a list, where each 'T' has been replaced with 'U'.
+""" Test cases:
 dna2rna_with_return(["A", "T", "G", "T", "C", "A"]) == ["A", "U", "G", "U", "C", "A"]
-dna2rna_with_return(["A", "C", "T", "T", "A", "C"]) == ["A", "C", "U", "U", "A", "C"]
-dna1rna_with_return(["G", "T", "T", "A", "C", "G", "A", "T", "C"]) == ["G", "U", "U", "A", "C", "G", "A", "U", "C"]
-'''
+dna2rna_with_return(["A", "C", "G", "C", "A"]) == ["A", "C", "G", "C", "A"]
+dna2rna_with_return(["T", "T", "T", "T"]) == ["U", "U", "U", "U"]
+"""
 def dna2rna_with_return(dna_sequenz):
     rna_sequenz = []
     for i in dna_sequenz:
@@ -137,6 +149,23 @@ def dna2rna_with_return(dna_sequenz):
             rna_sequenz.append(i)
     return rna_sequenz
 
+# dna2rna_without_return(List[str]) : None
+# Precondition: list is not empty and list contains only iterations of 'A', 'C', 'G', 'T'.
+# Effect: Modifies the input list directly, replacing each 'T' with 'U'.
+# Result: Each 'T' in the input list is replaced with 'U'.
+""" Test cases:
+dna_sequence = ["A", "T", "G", "C", "T", "A"]
+dna2rna_without_return(dna_sequence)
+dna_sequence == ["A", "U", "G", "C", "U", "A"] 
+
+dna_sequence = ["A", "C", "G", "C", "A"]
+dna2rna_without_return(dna_sequence)
+dna_sequence == ["A", "C", "G", "C", "A"]
+
+dna_sequence = ["T", "T", "T", "T"]
+dna2rna_without_return(dna_sequence)
+dna_sequence == ["U", "U", "U", "U"] 
+"""
 def dna2rna_without_return(dna_sequenz):
     for i in range(len(dna_sequenz)):
         if dna_sequenz[i] == "T":
@@ -155,6 +184,16 @@ def k_smallest(number_list, tmp = None):
         return tmp
 
 ## e) quersumme
+
+# quersumme(int) : int
+# Precondition: the input number is not negative
+# Effect: None
+# Result: The function returns the sum of the digits of number.
+""" Test cases:
+quersumme(123) == 6
+quersumme(0) == 0
+quersumme(505) == 10
+"""
 def quersumme(number):
     x = number
     if x > 0:
@@ -229,8 +268,8 @@ def aufgabe1():
 
             print("Zahlen für die zweite Liste:")
             second_number_list = create_number_list("Gebe die nächste Zahl ein: ", size_second_list)
-
-            print(add(first_number_list, second_number_list))
+            sum_list, skalar_produkt = add(first_number_list, second_number_list)
+            print("Die komponenten weise Summe der Liste ist", sum_list, "und das Skalarprodukt ist", skalar_produkt)
         elif user_choice == "4":
             number = input("Geben Sie eine Zahl ein: ")
             result = countDigits(number)
