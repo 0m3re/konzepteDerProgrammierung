@@ -46,10 +46,15 @@ def bsearch_calc(s_list, num):
         print("Rekursion - num > s_list[mid]")
         return bsearch_calc(s_list[mid+1:], num)
       
-# foo(List[Number], Number): Bool
-# Precondition: Non empty List
-# Effect: List elements will be rewritten with bool value
-# Result: Returns False if there is a smaller number in the list, else False
+# foo(List[int], int): bool
+# Precondition: xs is a list of integers, k is an integer.
+# Effect: None
+# Result: Returns True if any number in xs is less than or equal to k, otherwise False.
+""" Test cases:
+foo([5, 6, 7, 8], 6) == True
+foo([10, 20, 30], 5) == False
+foo([], 10) == False
+"""
 def foo(xs, k):
     n = len(xs)
     for i in range(n):
@@ -59,21 +64,32 @@ def foo(xs, k):
         erg = b or erg
     return erg
 
-# bar(List[Number], Number): Bool
-# Precondition: Non-empty list
+# bar(List[int], int): bool
+# Precondition: xs is a list of integers, k is an integer.
 # Effect: None
-# Result: Returns True if any number in the list is less than or equal to `k`, else False.
+# Result: Returns True if any number in xs is less than or equal to k, otherwise False.
+""" Test cases:
+bar([1, 2, 3, 4], 3) == True
+bar([7, 8, 9], 6) == False
+bar([], 10) == False
+"""
 def bar(xs, k):
     n = len(xs)
     erg = False
     for i in range(n):
         erg = (xs[i] <= k) or erg
     return erg
+python
 
-# recursive_bar(List[Number], Number):Bool
-# Precondition: Non empty List
+# recursiv_bar(List[int], int, bool): bool
+# Precondition: xs is a list of integers, k is an integer.
 # Effect: None
-# Result: Returns False if there is a smaller number in the list, else False
+# Result: Recursively returns True if any number in xs is less than or equal to k, otherwise False.
+""" Test cases:
+recursiv_bar([10, 20, 30], 15) == False
+recursiv_bar([2, 4, 6, 8], 5) == True
+recursiv_bar([], 10) == False
+"""
 def recursive_bar(xs, x):
     if len(xs)>2:
         return xs[0]>x
