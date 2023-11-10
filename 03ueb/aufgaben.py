@@ -106,7 +106,7 @@ def recursive_bar(xs, x):
 ## c) Funktion add
 # add(List[int], List[int]): (List[int], int)
 # Precondition: None
-# Effect: Prints a message if the lengths of the two lists are different.
+# Effect: None
 # Result: Returns a tuple containing two elements. 
 #         The first element is a list with the Component-wise sum of the elements of list1 and list2.
 #         The second element is the scalar product of list1 and list2.
@@ -115,17 +115,23 @@ add([1, 2, 3], [4, 5, 6]) == ([5, 7, 9], 32)
 add([1, 2, 3], [1, 2]) == ([2, 4], 5)
 add([1, 2], [1, 2, 3]) == ([2, 4], 5)
 """
+# Wir füllen die fehlenden Zahlen mit 0.
 def add(list1, list2):
+    if len(list1) < len(list2):
+        l1, l2 = list2, list1
+    else:
+        l1, l2 = list1, list2
+
+    while len(l1) > len(l2):
+        l2.append(0)
+
     sum_list = []
     scalar_product = 0
-    if len(list1) != len(list2):
-        print("Sie haben zwei verschiedene Größen angegeben. Die Zahlen, die es zu viel gibt, werden dann einfach weggelassen.")
-        length = min(len(list1), len(list2)) 
-    else: 
-        length = len(list1)
-    for i in range(length):
-        sum_list.append(list1[i] + list2[i])
-        scalar_product += list1[i] * list2[i]
+
+    for i in range(len(l1)):
+        sum_list.append(l1[i] + l2[i])
+        scalar_product += l1[i] * l2[i]
+
     return sum_list, scalar_product
 
 ## d) Funktion countDigits
