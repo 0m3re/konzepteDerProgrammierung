@@ -96,7 +96,6 @@ def bar(xs, k):
 """ Test cases:
 recursiv_bar([10, 20, 30], 15) == False
 recursiv_bar([2, 4, 6, 8], 5) == True
-recursiv_bar([], 10) == False
 """
 def recursive_bar(xs, x):
     if len(xs)>2:
