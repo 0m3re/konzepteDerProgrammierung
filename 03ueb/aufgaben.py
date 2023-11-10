@@ -284,26 +284,31 @@ def aufgabe1():
         if user_choice == "1":
             search_list = [1, 2, 4, 8, 16, 32, 42, 64, 128, 130, 243, 244, 289]
             number = 2
-            position = binaer_suche(search_list, number)
-            print(f"Die Nummer {number} wurde an der Position {position} gefunden.")
+            print("Wir suchen in der vorgegebenen Liste:", search_list)
+            found = binaer_suche(search_list, number)
+            print("Wurde die gesuchte Zahl", number, "in der Liste gefunden:", found)
         elif user_choice == "2":
             xs = []
-            length = input("Wie viele Zahle sollen in der Liste enthalten sein: ")
-            xs = create_number_list("Gebe die nächste Zahl ein: ", length)
-            k = input("Gebe die Zahl für k ein: ")
-
+            size = int(input("Wie groß soll die Liste sein: "))
+            smallest = int(input("Was ist die untere Schranke der Liste: "))
+            biggest = int(input("Was ist die obere Schranke der Liste: "))
+            xs = generate_random_number_list(size, smallest, biggest)
+            k = int(input("Gebe die Zahl für k ein: "))
+            print("Die generierte Liste", xs)
             print("Funktion foo: ", foo(xs, k))
             print("Imperative bar Funktion: ", bar(xs, k))
             print("Recursive bar Funktion", recursiv_bar(xs, k))
         elif user_choice == "3":
-            size_first_list = int(input("Gebe ein, wie viele Zahlen in der ersten Liste sein sollen: "))
-            size_second_list = input("Gebe ein, wie viele Zahlen in der zweiten Liste sein sollen: ")
-
-            print("Zahlen für die erste Liste:")
-            first_number_list = create_number_list("Gebe die nächste Zahl ein: ", size_first_list)
-
-            print("Zahlen für die zweite Liste:")
-            second_number_list = create_number_list("Gebe die nächste Zahl ein: ", size_second_list)
+            size_first_list = int(input("Gebe ein, wie groß die erste Liste sein soll: "))
+            smallest_first = int(input("Was ist die untere Schranke der Liste: "))
+            biggest_first = int(input("Was ist die obere Schranke der Liste: "))
+            size_second_list = int(input("Gebe ein, wie groß die zweite Liste sein soll: "))
+            smallest_second = int(input("Was ist die untere Schranke der Liste: "))
+            biggest_second = int(input("Was ist die obere Schranke der Liste: "))
+            first_number_list = generate_random_number_list(size_first_list, smallest_first, biggest_first)
+            second_number_list = generate_random_number_list(size_second_list, smallest_second, biggest_second)
+            print("Die erste generierte Liste", first_number_list)
+            print("Die zweite generierte Liste", second_number_list)
             sum_list, skalar_produkt = add(first_number_list, second_number_list)
             print("Die komponenten weise Summe der Liste ist", sum_list, "und das Skalarprodukt ist", skalar_produkt)
         elif user_choice == "4":
@@ -328,8 +333,9 @@ def aufgabe2():
         if user_choice == "1":
             search_list = [289, 244, 243, 130, 128, 64, 42, 32, 16, 8, 4, 2, 1]
             number = 2
-            position = binaer_suche(search_list.sort(), number)
-            print(f"Die Nummer {number} wurde an der Position {position} gefunden.")
+            print("Wir suchen in der vorgegebenen Liste:", search_list)
+            found = binaer_suche(search_list, number)
+            print("Wurde die Zahl", number, "in der Liste gefunden", found)
         elif user_choice == "2":
             print("Die Formel des euklidischen Algorithmus ist wie folgt: r(n-1) = quotient(n+1) * r(n) + r(n+1)")
             print("Berechnung des GGT für 1215 und 2745:")
@@ -337,23 +343,21 @@ def aufgabe2():
             print("\nDer größte gemeinsame Teiler (GGT) ist", result)
         elif user_choice == "3":
             dna_sequenz = list(input("Gebe die DNA-Sequenz ein, die du umwandeln möchtest: ").upper())
-            if input(dna_sequenz):
-                rna_sequenz = dna2rna_with_return(dna_sequenz)
-                print("Konvertierte Sequenz (unveränderte Originalsequenz):", rna_sequenz)
-                print("Original DNA-Sequenz:", dna_sequenz)
-                dna2rna_without_return(dna_sequenz)
-                print("Konvertierte DNA-Sequenz (veränderte Originalsequenz):", dna_sequenz)
-            else:
-                print("Die eingegebene Sequenz enthält ungültige Zeichen. Bitte geben Sie nur A, T, G oder C ein.")
+            rna_sequenz = dna2rna_with_return(dna_sequenz)
+            print("Konvertierte Sequenz (unveränderte Originalsequenz):", rna_sequenz)
+            print("Original DNA-Sequenz:", dna_sequenz)
+            dna2rna_without_return(dna_sequenz)
+            print("Konvertierte DNA-Sequenz (veränderte Originalsequenz):", dna_sequenz)
         elif user_choice == "4":
-            size = input("Wie groß soll die Liste sein.")
-            smallest = input("Was ist die untere Schranke der Liste.")
-            biggest = input("Was ist die obere Schranke der Liste.")
+            size = int(input("Wie groß soll die Liste sein: "))
+            smallest = int(input("Was ist die untere Schranke der Liste: "))
+            biggest = int(input("Was ist die obere Schranke der Liste: "))
             random_number_list = generate_random_number_list(size, smallest, biggest)
+            print("Die generierte Liste:", random_number_list)
             result = k_smallest(random_number_list) 
             print("Das kleinste Element der Liste ist", result)
-            number = input("Gebe eine Zahl ein, um die Quersumme zu berechnen: ")
         elif user_choice == "5":
+            number = int(input("Gebe eine Zahl ein, um die Quersumme zu berechnen: "))
             result = quersumme(number)
             print(f"Die Quersumme von {number} ist {result}.")
         elif user_choice == "6":
