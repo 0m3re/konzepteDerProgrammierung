@@ -70,11 +70,15 @@ def bar(xs, k):
         erg = (xs[i] <= k) or erg
     return erg
 
-def recursiv_bar(xs, k, erg = False):
-    if len(xs) > 0:
-        return recursiv_bar(xs[1:], k, (xs[0] <= k) or erg)
+# recursive_bar(List[Number], Number):Bool
+# Precondition: Non empty List
+# Effect: None
+# Result: Returns False if there is a smaller number in the list, else False
+def recursive_bar(xs, x):
+    if len(xs)>2:
+        return xs[0]>x
     else:
-        return erg
+      return xs[0]>x and recursive_bar(x[:1], x)
 
 ## c) Funktion add
 # add(List[int], List[int]): (List[int], int)
