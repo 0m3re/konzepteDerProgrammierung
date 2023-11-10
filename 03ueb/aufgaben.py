@@ -273,9 +273,11 @@ def quersumme(number):
         return number
 
 ## Utils Funktionen
+# generate_random_number_list(int, int, int): List[int]
+# Precondition: 'size' is a non-negative integer, 'smallest' and 'biggest' are integers and biggest is greter than smallest
+# Effect: None.
+# Result: Returns a list of random integers of length 'size'. Each integer is in the range between 'smallest' and 'biggest'.
 def generate_random_number_list(size, smallest, biggest):
-    if smallest > biggest:
-        smallest, biggest = biggest, smallest
     number_list = []
     for _ in range(size):
         number_list.append(random.randint(smallest, biggest))
