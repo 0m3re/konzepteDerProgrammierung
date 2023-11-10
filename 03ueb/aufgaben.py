@@ -370,7 +370,7 @@ def aufgabe1():
             sum_list, skalar_produkt = add(first_number_list, second_number_list)
             print("Die komponenten weise Summe der Liste ist", sum_list, "und das Skalarprodukt ist", skalar_produkt)
         elif user_choice == "4":
-            number = input("Geben Sie eine Zahl ein: ")
+            number = int(input("Geben Sie eine Zahl ein: "))
             result = countDigits(number)
             print("Die Anzahl an Dezimalstellen ist", result)
         elif user_choice == "5":
