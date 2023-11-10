@@ -186,7 +186,7 @@ def k_smallest(number_list, tmp = None):
 ## e) quersumme
 
 # quersumme(int) : int
-# Precondition: the input number is not negative
+# Precondition: None
 # Effect: None
 # Result: The function returns the sum of the digits of number.
 """ Test cases:
@@ -195,11 +195,13 @@ quersumme(0) == 0
 quersumme(505) == 10
 """
 def quersumme(number):
-    x = number
-    if x > 0:
-        return (x%10) + quersumme(x//10)
+    def quersumme(number):
+    if number > 10:
+        return (number%10) + quersumme(number//10)
+    elif number < -10:
+        return (number%-10) - quersumme((number//-10))
     else: 
-        return x 
+        return number
 
 ## Utils Funktionen
 def create_number_list(text, length):
