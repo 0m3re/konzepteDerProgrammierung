@@ -51,10 +51,6 @@ def bsearch_calc(s_list, num):
 # Effect: List elements will be rewritten with bool value
 # Result: Returns False if there is a smaller number in the list, else False
 def foo(xs, k):
-    """
-    Ueberprueft ob eine gegebene Zahl kleiner ist als alle in der Liste enthaltenen Zahlen ist, 
-    wenn ja gebe False aus ansonsten True.
-    """
     n = len(xs)
     for i in range(n):
         xs[i] = (xs[i] <= k)
@@ -64,10 +60,9 @@ def foo(xs, k):
     return erg
 
 # bar(List[Number], Number): Bool
-# Precondition: Non empty List
+# Precondition: Non-empty list
 # Effect: None
-# Result: Returns False if there is a smaller number in the list, else False
-
+# Result: Returns True if any number in the list is less than or equal to `k`, else False.
 def bar(xs, k):
     n = len(xs)
     erg = False
