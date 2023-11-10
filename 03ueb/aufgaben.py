@@ -75,6 +75,17 @@ def recursiv_bar(xs, k, erg = False):
         return erg
 
 ## c) Funktion add
+# add(List[int], List[int]): (List[int], int)
+# Precondition: None
+# Effect: Prints a message if the lengths of the two lists are different.
+# Result: Returns a tuple containing two elements. 
+#         The first element is a list with the Component-wise sum of the elements of list1 and list2.
+#         The second element is the scalar product of list1 and list2.
+""" Test cases:
+add([1, 2, 3], [4, 5, 6]) == ([5, 7, 9], 32)
+add([1, 2, 3], [1, 2]) == ([2, 4], 5)
+add([1, 2], [1, 2, 3]) == ([2, 4], 5)
+"""
 def add(list1, list2):
     sum_list = []
     scalar_product = 0
@@ -89,9 +100,27 @@ def add(list1, list2):
     return sum_list, scalar_product
 
 ## d) Funktion countDigits
-def countDigits_with_conversion(number):
+# countDigits_with_effect(int): int
+# Precondition: number is non-negative.
+# Effect: Converts the number to a string.
+# Result: Returns the number of digits in the given number.
+""" Test cases:
+countDigits_with_effect(12345) == 5
+countDigits_with_effect(1000) == 4
+countDigits_with_effect(0) == 1
+"""
+def countDigits_with_effect(number):
     return len(str(number))
 
+# countDigits(int): int
+# Precondition: number is non-negative.
+# Effect: None
+# Result: Returns the number of digits in the given number.
+""" Test cases:
+countDigits(12345) == 5
+countDigits(1000) == 4
+countDigits(0) == 0
+"""
 def countDigits(number):
     counter = 0
     while number > 0:
@@ -237,13 +266,6 @@ def quersumme(number):
         return number
 
 ## Utils Funktionen
-def create_number_list(text, length):
-    number_list = []
-    for _ in range(length):
-        number = input(text)
-        number_list.append(number)
-    return number_list
-
 def generate_random_number_list(size, smallest, biggest):
     if smallest > biggest:
         smallest, biggest = biggest, smallest
