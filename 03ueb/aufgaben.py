@@ -9,6 +9,15 @@ random.seed(0)
 
 # Aufgabe 1
 ## a) Binaersuche
+# bsearch(List[Number], Number): Number
+# Precondition: Non empty List of int/float
+# Effect: None
+# Result: Returns the smallest element
+'''Test cases
+print(bsearch([1,2,3,5,78,132,56768],132)) == True
+'''
+
+#bsearch sortiert die Liste aufsteigend, prüft das jeweils erste und letzte Element gegen das gesuchte Element.
 def bsearch(s_list, num):
     s_list.sort()
     if s_list[0]>num:
@@ -18,21 +27,10 @@ def bsearch(s_list, num):
     else:
         return bsearch_calc(s_list, num)
 
-def binaer_suche(number_list, number):
-    number_list.sort()
-    right = len(number_list) - 1
-    left = 0
-    while left <= right:
-        center = (right + left)//2
-        if number_list[center] == number:
-            return True
-        elif number_list[center] > number:
-            right = center - 1
-        else:
-            left = center + 1
-    else:
-        return False
- 
+# bsearch_calc(List[Number], Number): Number
+# Precondition: Non empty List of int/float. The list must be sorted in ascending order
+# Effect: None
+# Result: Returns the smallest element
 def bsearch_calc(s_list, num):
     print(s_list)
     length = len(s_list)
@@ -306,7 +304,7 @@ def aufgabe1():
             search_list = [1, 2, 4, 8, 16, 32, 42, 64, 128, 130, 243, 244, 289]
             number = 2
             print("Wir suchen in der vorgegebenen Liste:", search_list)
-            found = binaer_suche(search_list, number)
+            found = bsearch(search_list, number)
             print("Wurde die gesuchte Zahl", number, "in der Liste gefunden:", found)
         elif user_choice == "2":
             xs = []
@@ -355,7 +353,7 @@ def aufgabe2():
             search_list = [289, 244, 243, 130, 128, 64, 42, 32, 16, 8, 4, 2, 1]
             number = 2
             print("Wir suchen in der vorgegebenen Liste:", search_list)
-            found = binaer_suche(search_list, number)
+            found = bsearch(search_list, number)
             print("Wurde die Zahl", number, "in der Liste gefunden", found)
         elif user_choice == "2":
             print("Die Formel des euklidischen Algorithmus ist wie folgt: r(n-1) = quotient(n+1) * r(n) + r(n+1)")
