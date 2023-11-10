@@ -17,6 +17,9 @@ random.seed(0)
 # Result: Returns the smallest element
 '''Test cases
 print(bsearch([1,2,3,5,78,132,56768],132)) == True
+print(bsearch([1,2,3,44,2,12,55],44)) == True
+print(bsearch([1,2,3,5],132)) == False
+print(bsearch([1,2,3],1)) == True
 '''
 
 #bsearch sortiert die Liste aufsteigend, prüft das jeweils erste und letzte Element gegen das gesuchte Element.
