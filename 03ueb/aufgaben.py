@@ -54,8 +54,10 @@ def bsearch_calc(s_list, num):
 # Result: Returns True if the List contains a smaller element then the given one
 '''Test cases:
 foo([1,2,3,4,5,6],1) => [True, False, False, False, False, False] = True
-
+foo([5, 6, 7, 8], 6) == True
+foo([10, 20, 30], 5) == False
 '''
+
 ''' Zum Thema Nebeneffekte:
 Mit der Funktion foo wird nicht nur ein Resultat ausgegeben sondern es wird die komplette Liste umgeschrieben nur um sie danach nochmal zu durchlaufen.
 
@@ -73,6 +75,10 @@ def foo(xs, k):
 # Precondition: Non-empty list
 # Effect: None
 # Result: Returns True if any number in the list is less than or equal to `k`, else False.
+""" Test cases:
+bar([1, 2, 3, 4], 3) == True
+bar([7, 8, 9], 6) == False
+"""
 def bar(xs, k):
     n = len(xs)
     erg = False
@@ -80,10 +86,15 @@ def bar(xs, k):
         erg = (xs[i] <= k) or erg
     return erg
 
-# recursive_bar(List[Number], Number):Bool
-# Precondition: Non empty List
+# recursiv_bar(List[Number], Number): bool
+# Precondition: The List is not empty
 # Effect: None
-# Result: Returns False if there is a smaller number in the list, else False
+# Result: Recursively returns True if any number in xs is less than or equal to k, otherwise False.
+""" Test cases:
+recursiv_bar([10, 20, 30], 15) == False
+recursiv_bar([2, 4, 6, 8], 5) == True
+recursiv_bar([], 10) == False
+"""
 def recursive_bar(xs, x):
     if len(xs)>2:
         return xs[0]<=x
