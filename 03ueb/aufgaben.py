@@ -193,6 +193,7 @@ def k_smallest(number_list, tmp = None):
 quersumme(123) == 6
 quersumme(0) == 0
 quersumme(505) == 10
+quersumme(-123) == -6
 """
 def quersumme(number):
     def quersumme(number):
