@@ -187,13 +187,13 @@ def smallest(num_list):
     # Abbruchsbedingung für Liste < 2.
     if len(num_list)<2:
           None
-      # Vergleich der jeweils ersten beiden Elemente der List - das größere wird entfernt.
-      elif num_list[0] < num_list[1]:
-          del num_list[1]
-          smallest(num_list)
-      else:
-          del num_list[0]
-          smallest(num_list)
+    # Vergleich der jeweils ersten beiden Elemente der List - das größere wird entfernt.
+    elif num_list[0] < num_list[1]:
+        del num_list[1]
+        smallest(num_list)
+    else:
+        del num_list[0]
+        smallest(num_list)
           
 ## d 2) smallest - No Effect
 # smallest(List[Number]):Number
@@ -206,15 +206,15 @@ k_smallest([9,827,1,3,5,7,1,-1) == -1
 k_smallest([1]) == 1
 l_smallest([1.0,1.3.0.3.10.5]) == 0.3
 '''
-  def k_smallest(num_list):
-      # Abbruchsbedingung für Liste < 2.
-      if len(num_list)<2:
-          return num_list[0]
-      # Vergleich der jeweils ersten beiden Elemente der List - das größere wird entfernt.
-      elif num_list[0] < num_list[1]:
-          return k_smallest(num_list[:1]+num_list[2:])
-      else:
-          return k_smallest(num_list[1:])
+def k_smallest(num_list):
+    # Abbruchsbedingung für Liste < 2.
+    if len(num_list)<2:
+        return num_list[0]
+    # Vergleich der jeweils ersten beiden Elemente der List - das größere wird entfernt.
+    elif num_list[0] < num_list[1]:
+        return k_smallest(num_list[:1]+num_list[2:])
+    else:
+        return k_smallest(num_list[1:])
 
 ## e) quersumme
 
@@ -229,7 +229,6 @@ quersumme(505) == 10
 quersumme(-123) == -6
 """
 def quersumme(number):
-    def quersumme(number):
     if number > 10:
         return (number%10) + quersumme(number//10)
     elif number < -10:
