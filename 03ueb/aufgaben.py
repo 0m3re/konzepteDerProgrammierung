@@ -46,6 +46,10 @@ def bsearch_calc(s_list, num):
         print("Rekursion - num > s_list[mid]")
         return bsearch_calc(s_list[mid+1:], num)
       
+# foo(List[Number], Number): Bool
+# Precondition: Non empty List
+# Effect: List elements will be rewritten with bool value
+# Result: Returns False if there is a smaller number in the list, else False
 def foo(xs, k):
     """
     Ueberprueft ob eine gegebene Zahl kleiner ist als alle in der Liste enthaltenen Zahlen ist, 
@@ -58,6 +62,11 @@ def foo(xs, k):
     for b in xs:
         erg = b or erg
     return erg
+
+# bar(List[Number], Number): Bool
+# Precondition: Non empty List
+# Effect: None
+# Result: Returns False if there is a smaller number in the list, else False
 
 def bar(xs, k):
     n = len(xs)
