@@ -52,7 +52,15 @@ object Goldchains extends App {
   enum Chain:
     case Empty
     case Join(left : Chain, l : Link, right : Chain)
-
+    
+    //toList(Chain):List[Link]
+    //Precondition: None
+    //Effect: None
+    //result: Iterates of the Linked-List Chain and adds each element into a List()
+    //Test cases:
+    //toList(Chain.Join(left:Chain.Empty, l:G, right:Chain.Join(left:Chain(..), l:S, right:Empty)) = List(G,S)
+    //toList(Chain.Join(left:Chain.Empty, l:P, right:Chain.Empty)) = List(P)
+    //toList(Chain.Empty) = List()
   def toList(cha:Chain):List[Link] = 
     def iterate(cha:Chain, li:List[Link]): List[Link] =  
       cha match
