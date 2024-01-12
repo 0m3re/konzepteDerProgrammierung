@@ -5,6 +5,18 @@
  */
 
 // Aufgabe a)
+/* 
+ * verifySort[T](list: List[T]): Boolean
+ * Precondition: T has to be a type that can be ordered
+ * Effect: None
+ * Result: Returns true if the given list is sorted in ascending order, otherwise false
+ * Test cases:
+    * verifySort(List(1, 2, 3, 4, 5)) = true
+    * verifySort(List(1, 2, 7, 4, 5, 6)) = false
+    * verifySort(List("a", "b", "c", "d")) = true
+    * verifySort(List[Int]()) = true
+    * verifySort(List(1)) = true
+ */
 def verifySort[T](list: List[T])(implicit ord: Ordering[T]): Boolean = 
     list match 
         case Nil | _ :: Nil => true
@@ -13,6 +25,19 @@ def verifySort[T](list: List[T])(implicit ord: Ordering[T]): Boolean =
             case _ => false
 
 // Aufgabe b)
+/* 
+ * sumSmaller[T](list: List[T], w: T): T
+ * Precondition: T has to be a Numeric type
+ * Effect: None
+ * Result: Returns the sum of all elements in the given list that are smaller than w
+ * Test cases:
+    * sumSmaller(List(1, 2, 7, 4, 5, 6), 5) = 12
+    * sumSmaller(List(1, 2, 7, 4, 5, 6), 0) = 0
+    * sumSmaller(List(1, 2, 7, 4, 5, 6), 7) = 15
+    * sumSmaller(List(1, 2, 7, 4, 5, 6), 8) = 15
+    * sumSmaller(List[Int](), 5) = 0
+    * sumSmaller(List(1, 2, 7, 4, 5, 6), 5.0) = 12.0
+ */
 def sumSmaller[T](list: List[T], w: T)(implicit num: Numeric[T]): T = 
     list match 
         case Nil => num.zero
@@ -26,13 +51,30 @@ enum EntwederOder[+A, +B]:
 
 
 // EntwederOder kann für Fehlerbehandlung verwendet werden, um Fehlermeldungen zu übergeben.
-
+/* 
+ * parseInteger(str: String): EntwederOder[String, Int]
+ * Precondition: None
+ * Effect: None
+ * Result: Returns a Right(Int) if the given String can be parsed to an Integer, otherwise a Left(String) with an error message
+ * Test cases:
+    * parseInteger("123") = Rechts(123)
+    * parseInteger("abc") = Links("Konnte 'abc' nicht in Integer umwandeln")
+ */
 def parseInteger(str: String): EntwederOder[String, Int] = 
     try 
         EntwederOder.Rechts(str.toInt)
     catch
         case _: NumberFormatException => EntwederOder.Links(s"Konnte '$str' nicht in Integer umwandeln")
 
+/*
+ * dateiExistiert(filePath: String): EntwederOder[String, Boolean]
+ * Precondition: None
+ * Effect: None
+ * Result: Returns a Right(true) if the given file exists, otherwise a Left(String) with an error message
+ * Test cases:
+    * dateiExistiert("nichtExistierendeDatei.txt") = Links("Datei 'nichtExistierendeDatei.txt' existiert nicht")
+    * dateiExistiert("aufgabe1.scala") = Rechts(true)
+*/
 def dateiExistiert(filePath: String): EntwederOder[String, Boolean] = 
     val file = new java.io.File(filePath)
 
@@ -92,8 +134,9 @@ def splitAt[A](list : List[A], i : Int) : (List[A], List[A]) =
 
 
 
-// @main def tests = {
+@main def tests = 
 //     println(verifySort(List(1, 2, 7, 4, 5, 6)))
+//     println(verifySort(List("a", "b", "c", "d")))
 //     println(sumSmaller(List(1, 2, 7, 4, 5, 6), 5))
 //     val ergebnis1 = parseInteger("123")
 //     val ergebnis2 = parseInteger("abc")
@@ -109,4 +152,3 @@ def splitAt[A](list : List[A], i : Int) : (List[A], List[A]) =
 //     println(expr.negateVals)
 //     println(expr2.eval)
 //     println(expr2.negateVals)
-// }
