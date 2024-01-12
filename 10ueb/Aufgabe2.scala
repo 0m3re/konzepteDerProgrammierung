@@ -95,7 +95,7 @@ object Goldchains extends App {
     //Test cases:
     //priceIterate(Chain.Join(left:Chain.Empty, l:Link.G, right:Chain.Empty)) = 1
     //priceIterate(Chain.Empty) = 0
-    //price(Chain.Join(left:Chain.Empty, l:G, right:Chain.Join(left:Chain.Join(..), l:Link.S, right:Chain.Empty)) = 4
+    //priceIterate(Chain.Join(left:Chain.Empty, l:G, right:Chain.Join(left:Chain.Join(..), l:Link.S, right:Chain.Empty)) = 4
   def priceIterate(cha:Chain):Number = 
     def help(chain:Chain, sum:Int):Int =
         chain match
@@ -108,7 +108,16 @@ object Goldchains extends App {
             }
           }
     return help(cha, 0)
-  
+
+
+    //priceWithList(cha:CHain):Integer
+    //Precondition: None
+    //Effect: None
+    //result: Returns the price of a Chain, this version uses map and fold.
+    //Test cases:
+    //priceWithList(Chain.Join(left:Chain.Empty, l:Link.G, right:Chain.Empty)) = 1
+    //priceWithList(Chain.Empty) = 0
+    //priceWithList(Chain.Join(left:Chain.Empty, l:G, right:Chain.Join(left:Chain.Join(..), l:Link.S, right:Chain.Empty)) = 4
   def priceWithList(cha:Chain):Integer =
     val newList = toList(cha).map(p)
     return newList.fold(0)((x,y) => x+y)
