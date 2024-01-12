@@ -118,7 +118,6 @@ enum BoolExpr:
             case Not(expr) => Not(expr.negateVals)
 
 // Aufgabe e)
-
 def splitAt[A](list : List[A], i : Int) : (List[A], List[A]) =
     (list, i) match
         case (Nil, _) =>
@@ -131,10 +130,12 @@ def splitAt[A](list : List[A], i : Int) : (List[A], List[A]) =
 
 // Signatur: def splitAt[A](list: List[A], i: Int): (List[A], List[A])
 // Precondition: i >= 0
+// Effect: None
+// Result: Returns a tuple of two lists, where the first list contains the first i elements of the given list and the second list contains the remaining elements
 
 
 
-@main def tests = 
+// @main def tests = 
 //     println(verifySort(List(1, 2, 7, 4, 5, 6)))
 //     println(verifySort(List("a", "b", "c", "d")))
 //     println(sumSmaller(List(1, 2, 7, 4, 5, 6), 5))
