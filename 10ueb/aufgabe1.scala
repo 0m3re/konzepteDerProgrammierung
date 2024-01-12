@@ -75,7 +75,7 @@ enum BoolExpr:
             case And(left, right) => And(left.negateVals, right.negateVals)
             case Not(expr) => Not(expr.negateVals)
 
-
+// Aufgabe e)
 
 def splitAt[A](list : List[A], i : Int) : (List[A], List[A]) =
     (list, i) match
@@ -86,8 +86,6 @@ def splitAt[A](list : List[A], i : Int) : (List[A], List[A]) =
         case (x::xs, i) =>
             val (left, right) = splitAt(xs, i-1)
             (x::left, right) // (*)
-
-// Aufgabe e)
 
 // Signatur: def splitAt[A](list: List[A], i: Int): (List[A], List[A])
 // Precondition: i >= 0
