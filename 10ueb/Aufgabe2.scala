@@ -1,3 +1,10 @@
+    //mergeSort(List[T]):List[T]
+    //Precondition: non Empty List
+    //Effect: Orders a given List via mergeSort / polymorph
+    //result: None
+    //Test cases:
+    //mergeSort(List(3,2,1)) = List(1,2,3)
+    //mergeSort(List("hallo","Hello") = List("Hello","Hallo")
 def mergeSort[T](list: List[T])(implicit ord: Ordering[T]): List[T] = 
     def merge(left: List[T], right: List[T]): List[T] = 
         (left, right) match 
