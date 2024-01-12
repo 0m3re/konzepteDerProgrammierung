@@ -1,3 +1,5 @@
+// Aufgabe 2a
+
     //mergeSort(List[T]):List[T]
     //Precondition: non Empty List
     //Effect: Orders a given List via mergeSort / polymorph
@@ -21,6 +23,8 @@ def mergeSort[T](list: List[T])(implicit ord: Ordering[T]): List[T] =
         val (left, right) = list.splitAt(n)
         merge(mergeSort(left), mergeSort(right))
 
+
+// Aufgabe 2b
 object VielleichtNeMap extends App {
     enum Vielleicht[+T]:
       case Nichts
@@ -53,6 +57,8 @@ object VielleichtNeMap extends App {
       return newList
 }
 
+
+// Aufgabe 2c
 object Goldchains extends App {
   enum Link:
     case G, S, P
@@ -102,7 +108,7 @@ object Goldchains extends App {
     //Test cases:
     //priceIterate(Chain.Join(left:Chain.Empty, l:Link.G, right:Chain.Empty)) = 1
     //priceIterate(Chain.Empty) = 0
-    //priceIterate(Chain.Join(left:Chain.Empty, l:G, right:Chain.Join(left:Chain.Join(..), l:Link.S, right:Chain.Empty)) = 4
+    //priceIterate(Chain.Join(left:Chain.Empty, l:Link.G, right:Chain.Join(left:Chain.Join(..), l:Link.S, right:Chain.Empty)) = 4
   def priceIterate(cha:Chain):Number = 
     def help(chain:Chain, sum:Int):Int =
         chain match
