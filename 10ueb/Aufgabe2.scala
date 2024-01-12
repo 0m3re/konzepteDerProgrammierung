@@ -35,8 +35,8 @@ object VielleichtNeMap extends App {
     //Effect: None
     //result: extracts each Value of Type Vielleicht that is not Nichts and adds it to a List
     //Test cases:
-    //map(Vielleicht(Nichts), f(x)=>2*x) = Vielleicht(Nichts)
-    //map(Vielleicht(1), f(x)=>2*x) = Vielleicht(2)
+    //extract(List(Nichts,Wert(1),Wert(2),Nichts,Wert(3))) = List(1,2,3)
+    //extract(List(Nichts,Nichts,Nichts)) = List()
     def extract[A](li:List[Vielleicht[A]]): List[A] =
       val newList:List[A] = List()
       li.foreach {
