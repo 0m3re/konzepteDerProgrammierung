@@ -2,15 +2,28 @@
 
 
 object VielleichtNeMap extends App {
-  enum Vielleicht[+T]:
-    case Nichts
-    case Wert(t : T)
-
+    enum Vielleicht[+T]:
+      case Nichts
+      case Wert(t : T)
+    //map(Vielleicht[A], f:A=>B):Vielleicht[B]
+    //Precondition: None
+    //Effect: None
+    //result: Recives an Element of Type Vielleicht and applies a given function to it and returns f(Vielleicht[A])
+    //Test cases:
+    //map(Vielleicht(Nichts), f(x)=>2*x) = Vielleicht(Nichts)
+    //map(Vielleicht(1), f(x)=>2*x) = Vielleicht(2)
     def map[A,B](v:Vielleicht[A], f:A=>B): Vielleicht[B] = 
       v match
         case Nichts => return Nichts
         case Wert(t) => return Wert(f(t))
-    
+  
+    //extract(List[Vielleicht[A]]):List[A]
+    //Precondition: A List of Type Vielleicht[A]
+    //Effect: None
+    //result: extracts each Value of Type Vielleicht that is not Nichts and adds it to a List
+    //Test cases:
+    //map(Vielleicht(Nichts), f(x)=>2*x) = Vielleicht(Nichts)
+    //map(Vielleicht(1), f(x)=>2*x) = Vielleicht(2)
     def extract[A](li:List[Vielleicht[A]]): List[A] =
       val newList:List[A] = List()
       li.foreach {
