@@ -73,12 +73,29 @@ object Goldchains extends App {
           }
         }
     return iterate(cha, List())
+
+    //p(Link):Int
+    //Precondition: None
+    //Effect: None
+    //result: Returns a Given Price to each case of Type Link
+    //Test cases:
+    //p(G) => 1
+    //p(P) => 2
+    //p(S) => 3
   def p(l:Link):Int =
         l match
           case Link.G => return 1
           case Link.P => return 2
           case Link.S => return 3
-        
+    
+    //priceIterate(cha:CHain):Number
+    //Precondition: None
+    //Effect: None
+    //result: Returns a price for a hole Chain, this version works like toList and uses p()
+    //Test cases:
+    //priceIterate(Chain.Join(left:Chain.Empty, l:Link.G, right:Chain.Empty)) = 1
+    //priceIterate(Chain.Empty) = 0
+    //price(Chain.Join(left:Chain.Empty, l:G, right:Chain.Join(left:Chain.Join(..), l:Link.S, right:Chain.Empty)) = 4
   def priceIterate(cha:Chain):Number = 
     def help(chain:Chain, sum:Int):Int =
         chain match
