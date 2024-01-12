@@ -102,7 +102,7 @@ object Goldchains extends App {
     //Test cases:
     //priceIterate(Chain.Join(left:Chain.Empty, l:Link.G, right:Chain.Empty)) = 1
     //priceIterate(Chain.Empty) = 0
-    //priceIterate(Chain.Join(left:Chain.Empty, l:G, right:Chain.Join(left:Chain.Join(..), l:Link.S, right:Chain.Empty)) = 4
+    //priceIterate(Chain.Join(left:Chain.Empty, l:Link.G, right:Chain.Join(left:Chain.Join(..), l:Link.S, right:Chain.Empty)) = 4
   def priceIterate(cha:Chain):Number = 
     def help(chain:Chain, sum:Int):Int =
         chain match
