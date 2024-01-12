@@ -1,5 +1,18 @@
+def mergeSort[T](list: List[T])(implicit ord: Ordering[T]): List[T] = 
+    def merge(left: List[T], right: List[T]): List[T] = 
+        (left, right) match 
+            case (Nil, _) => right
+            case (_, Nil) => left
+            case (x :: xs, y :: ys) =>
+                if (ord.lt(x, y)) x :: merge(xs, right)
+                else y :: merge(left, ys)
+  
 
-
+    val n = list.length / 2
+    if (n == 0) list
+    else 
+        val (left, right) = list.splitAt(n)
+        merge(mergeSort(left), mergeSort(right))
 
 object VielleichtNeMap extends App {
     enum Vielleicht[+T]:
